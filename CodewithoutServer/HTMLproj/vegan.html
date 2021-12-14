@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <link href='style.css' rel='stylesheet' type='text/css'>
+        <title>TMSMPG</title>
+    </head>
+    <body>
+        <nav>
+        <div class="menubar">
+            <div class="logo">
+                <a href="#">TMSMPG</a>
+                <i class='bx bxs-cake'></i>
+            </div>
+            <div class="navigation">
+               <ul class="links">
+                   <li><div class="home"><a href="Navigation Menu.html">Home</a>
+                       <i class='bx bxs-home-circle' ></i></div>
+                   </li>
+                   <li><div class="prof">
+                       <a href="#">Profile</a>
+                       <i class='bx bx-user'></i>
+                       <ul class="profile-sub-menu">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="log.html">Register</a></li>
+                            <li><a href="Myprofile.html">My Account</a></li>
+                        </ul></div>
+                   </li>
+                   <li><div class="rec"><a href="#">Recipes</a>
+                        <i class='bx bxs-food-menu'></i>
+                        <ul class="recipe-sub-menu">
+                            <li><a href="vegan.html">Vegan</a></li>
+                            <li><a href="Keto.html">Keto</a></li>
+                            <li><a href="#">Student Friendly</a></li>
+                        </ul></div>
+                   </li>
+                   <li><div class="contact"><a href="#">Contact Us</a>
+                        <i class='bx bx-envelope'></i></div>
+                   </li>
+                   <li><div class="QA"><a href="#">Q/A</a>
+                        <i class='bx bx-question-mark'></i></div>
+                   </li>
+               </ul>
+            </div>
+        </div>
+        </nav>
+        <br>
+        <br>
+        <div class="panel">
+            <p style="text-align: center">"Vegan Recipes"</p>
+        </div>
+        <script type="text/babel">
+            class Picture extends React.Component {
+                render() {
+                    var pictureStyle={
+                        width:"100%",
+                        height:"60%",
+                        backgroundColor:"pink",
+                        align: "center"
+                    };
+                    var imageStyle={
+                        width:"100%",
+                        height:"100%",
+                        align: "center"
+                    };
+                    return (<div style={pictureStyle}><img src={this.props.I} style={imageStyle}/></div>);
+                }
+            }
+            class Label extends React.Component {
+                render(){
+                    var labelStyle={
+                        fontFamily:"sans-serif",
+                        fontSize:20,
+                        padding: 15,
+                        fontWeight:"bold",
+                        fontStyle:"italic",
+                        margin:0,
+                        textAlign:"center"
+                    }
+                    var descriptionStyle={
+                        fontFamily:"sans-serif",
+                        fontSize:15,
+                        padding: 15,
+                        margin:0,
+                        textAlign:"center",
+                        fontStyle:"italic",
+                    }
+                    return(<div className="label">
+                        <p style={labelStyle}>{this.props.det}</p>
+                        <p style={descriptionStyle}>{this.props.children}</p>
+                        <p style={descriptionStyle}>Rated:{this.props.r}</p>
+                        <button  type="button" className="btn" onClick={this.fun1} >View</button>
+                        </div>);
+                }
+                fun1=()=>{
+                    location.href=this.props.l;
+                }
+            }
+            class Recipe extends React.Component {
+                render(){
+                    var recipeStyle={
+                        height:"25em",
+                        width: "20em",
+                        padding: 10,
+                        margin: 30,
+                        filter:"drop-shadow(0px 0px 5px #666)",
+                        backgroundColor: "white",
+                        display:"inline-block"
+                    }
+                    return(<div style={recipeStyle} className="Recipe">
+                            <Picture I={this.props.Img}/>
+                            <Label det={this.props.Name} l={this.props.Link} r={this.props.rating}>{this.props.children}</Label>
+                        </div>);
+                }
+            }
+            ReactDOM.render(
+                <div>
+                    <Recipe Name="Vegan Coconut Dal" Link="1.html" rating="4/5" Img="dal.jpg">Look no further for a creamy and ultra smooth Vegan Coconut Dal recipe!</Recipe>
+                    <Recipe Name="Vegan chickpea Curry" Link="2.html" rating="3/5" Img="chickpea.png">South Indian Chickpea Curry with coconut milk and spices like fennel and cardamom</Recipe>
+                    <Recipe Name="Bean Walnut 'Shroom Burgers" Link="5.html" rating="4/5" Img="burg.jpg">A healthy vegan option for burgers</Recipe>
+                </div>,document.querySelector("#container")
+            );
+        </script>
+        <br>
+        <div id="container"></div>
+    </body>
+</html>
