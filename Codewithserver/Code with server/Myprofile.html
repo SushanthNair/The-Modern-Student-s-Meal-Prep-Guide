@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Zen Antique Soft', serif;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 70px;
+    background: rgb(255, 166, 0);
+    z-index:99;
+}
+nav .menubar{
+    max-width:1250px;
+    height:100%;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:auto;
+    padding:0 50px;
+}
+nav .menubar .navigation{
+    height:100%;
+    line-height:70px;
+}
+nav .menubar .links{
+    display:flex;
+}
+nav .menubar .links li{
+    position: relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    list-style: none;
+    padding:0 14px
+}
+
+nav .menubar .links li a{
+    text-decoration:none;
+    font-size:25px;
+    border:2px solid transparent;
+    color: white;
+}
+
+nav .menubar .links li i{
+    font-size:25px;
+}
+.logo a{
+    text-decoration: none;
+    font-size:30px;
+    font-weight:bold;
+
+}
+.logo i{
+    font-size:30px;
+}
+
+
+.links li .profile-sub-menu{
+    position:absolute;
+    top:70px;
+    left:0;
+    line-height:40px;
+    background-color:rgb(195, 195, 195);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius:0 0 4px 4px;
+    border:3px solid rgb(66, 65, 65);
+    display:none;
+    z-index:100;
+}
+
+nav .navigation .links li:hover .profile-sub-menu{
+    display:inline-block;
+}
+nav .navigation .links li:hover .prof{
+    background-color:rgb(180, 121, 12);
+}
+
+
+.links li .recipe-sub-menu{
+    position:absolute;
+    top:70px;
+    left:0;
+    line-height:40px;
+    background-color:rgb(195, 195, 195);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius:0 0 4px 4px;
+    border:3px solid rgb(66, 65, 65);
+    display:none;
+    z-index:100;
+}
+.recipe-sub-menu{
+    font-style: italic;
+}
+
+.links li:hover .recipe-sub-menu{
+    display:block;
+}
+
+
+.links li:hover{
+    color:#fff;
+    background-color:rgb(180, 121, 12);
+}
+
+#container{
+    display:flex;
+    flex-wrap: wrap;
+    padding:20px;
+}
+
+.panel{
+    background-color:teal;
+    padding:10px;
+    color:#fff;
+    font-size:50px;
+    display:flex;
+    width:100%;
+    height:250px;
+    align-items:center;
+    font-style: italic;
+    border:2px solid grey;
+}
+body{
+    background-image:url("food.jpg");
+    background-color:black;
+}
+
+.Recipe{
+    transition: transform .2s;
+}
+.Recipe:hover{
+    transform: scale(1.01);
+}
+
+.btn{
+    display:flex;
+    text-align:center;
+    width: 90%;
+    border: 1 px solid black;
+    background: transparent;
+    transition: transform .2s;
+    margin-left:15px;
+    padding:1px;
+}
+.btn:hover{
+    background:red;
+    color:white;
+    transform: scale(1.03);
+}
+
+.recipe{
+    background-color: aliceblue;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+   background-color: #f3f3f3;
+}
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 900px;
+  height:300px;
+  display: flex;
+  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+}
+
+.wrapper .left{
+  width: 35%;
+  background: linear-gradient(to right,#01a9ac,#01dbdf);
+  padding: 30px 25px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+.wrapper .left img{
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width:80%;
+  height:80%;
+}
+
+.wrapper .left h4{
+  margin-bottom: 10px;
+}
+
+.wrapper .left p{
+  font-size: 12px;
+}
+
+.wrapper .right{
+  width: 65%;
+  background: #fff;
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.wrapper .right .info{
+  margin-bottom: 25px;
+}
+
+.wrapper .right .info h3{
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #353c4e;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.wrapper .right .info_data{
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper .right .info_data .data{
+  width: 45%;
+}
+
+.wrapper .right .info_data .data h4{
+    color: #353c4e;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.wrapper .right .info_data .data p{
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #919aa3;
+}
+
+        </style>
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+        <title>My Profile</title>
+    </head>
+    <body>
+        <nav>
+            <div class="menubar">
+                <div class="logo">
+                    <a href="#">TMSMPG</a>
+                    <i class='bx bxs-cake'></i>
+                </div>
+                <div class="navigation">
+                   <ul class="links">
+                       <li><div class="home"><a href="/">Home</a>
+                           <i class='bx bxs-home-circle' ></i></div>
+                       </li>
+                       <li><div class="prof">
+                           <a href="#">Profile</a>
+                           <i class='bx bx-user'></i>
+                           <ul class="profile-sub-menu">
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/log">Register</a></li>
+                                <li><a href="/Myprofile">My Account</a></li>
+                            </ul></div>
+                       </li>
+                       <li><div class="rec"><a href="#">Recipes</a>
+                            <i class='bx bxs-food-menu'></i>
+                            <ul class="recipe-sub-menu">
+                                <li><a href="/vegan">Vegan</a></li>
+                                <li><a href="/keto">Keto</a></li>
+                                <li><a href="#">Student Friendly</a></li>
+                            </ul></div>
+                       </li>
+                       <li><div class="contact"><a href="/faq1">Contact Us</a>
+                            <i class='bx bx-envelope'></i></div>
+                       </li>
+                       <li><div class="QA"><a href="/faq">Q/A</a>
+                            <i class='bx bx-question-mark'></i></div>
+                       </li>
+                   </ul>
+                </div>
+            </div>
+            </nav>
+        <br>
+        <br>
+        
+        <div class="wrapper">
+            <div class="left">
+                <img src="blankprofile.jpg" 
+                alt="user" width="100">
+                <h4>John Doe</h4>
+            </div>
+            <div class="right">
+                <div class="info">
+                    <h3>Information</h3>
+                    <div class="info_data">
+                         <div class="data">
+                            <h4>Email</h4>
+                            <p>JohnDoe@gmail.com</p>
+                         </div>
+                         <div class="data">
+                           <h4>Phone</h4>
+                            <p>0001-xxx-99xxxx</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </body>
+        </html>
+        
+        </body>
+</html>

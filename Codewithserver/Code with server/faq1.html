@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Contact Us page</title>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <style>
+ 
+        /* Here * is used to make the margin
+        and padding to be at 0*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+     
+        :root {
+            --navbar-height: 59px;
+        }
+     
+        /* This is for the logo of the company */
+        .logo {
+            width: 20%;
+     
+            /* It is used to make the logo to
+            be displayed along with the ul
+            list horizontally */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+     
+        .logo img {
+            width: 33%;
+     
+            /* The logo image will have a border,
+            that has a width of 2px and the
+            color of the border is white */
+            border: 2px solid white;
+     
+            /* Now we will add a border radius of
+            5px to make the logo image circular*/
+            border-radius: 50px;
+        }
+     
+        .navbar {
+     
+            /* To make all those logo image and
+            the list to be displayed horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+     
+            /* When we will take our mouse to
+            those lists or image the cursor will
+            be pointer */
+            cursor: pointer;
+        }
+     
+        .nav-list {
+            width: 70%;
+     
+            /* It is to display the list in
+                horizontal*/
+            display: flex;
+        }
+     
+        .nav-list li {
+     
+            /* This will remove the style
+            of bulleted list */
+            list-style: none;
+     
+            /* This will create a space
+            between the items */
+            padding: 2px 6px;
+        }
+     
+        .nav-list li a {
+     
+            /* This is to remove the underline
+            of the text that appears when we
+            use the anchor tag */
+            text-decoration: none;
+     
+            /* This is to display the color
+            of those anchor text white*/
+            color: white;
+        }
+     
+        /* When the user will point their
+        mouse towards any anchor text they
+        will find a different color */
+     
+        .nav-list li a:hover {
+            color: grey;
+        }
+     
+        .rightNav {
+            width: 50;
+     
+            /* We will find the search box along
+            with the search button will be shifted
+            to right */
+            text-align: right;
+        }
+     
+        #search {
+            padding: 5px;
+     
+            /* The size of the font that will be
+            appearing in the search box when the
+            user will try to search something */
+            font-size: 17px;
+     
+            /* The border of the search box has
+            a width of 2px and the type of the
+            border is solid. The color of the
+            border will be grey */
+            border: 2px solid grey;
+     
+            /* We will use a border-radius to make
+            the search box give a better looking
+            shape than rectangular shape */
+            border-radius: 9px;
+        }
+     
+        .background {
+     
+            /* The background image will change
+            whenever we load the page */
+            background-color: grey;
+     
+            /* This will make the background that
+            have been added will be darken */
+            background-blend-mode: darken;
+            background-size: cover;
+        }
+     
+        .firstsection {
+     
+            /* It is to make the height of the
+            viewport to be 100 */
+            height: 100vh;
+        }
+     
+        .box-main {
+     
+            /* This is to display the contact us
+            and the sentences below it to be
+            displayed in flex */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+     
+            /* This is to display the text to have
+            a color of white */
+            color: white;
+            max-width: 50%;
+     
+            /* Now we will set the margin to auto */
+            /* This will make all the text to be
+            displayed at the center of the page */
+            margin: auto;
+     
+            /* This will make the text to display
+            at the center of the page vertically */
+            height: 80%;
+        }
+     
+        .firstHalf {
+            width: 75%;
+            display: flex;
+     
+            /* It is to specify the direction of
+            the flexible items */
+            flex-direction: column;
+            justify-content: center
+        }
+     
+        .firstHalf img {
+            display: flex;
+            border-radius: 9050px;
+        }
+     
+        /* This is used to make the text
+        to appear bigger */
+     
+        /* Now we have used a font here to
+        distinguish itself from the next text */
+        .text-big {
+            font-family: 'Piazzolla', serif;
+     
+            /* The text to have a style of bold */
+            font-weight: bold;
+     
+            /* The size of the text to be appearing
+            as bigger to distinguish itself from
+            the text in the class text-small */
+            font-size: 41px;
+     
+            /* The text to be aligned at center */
+            text-align: center;
+        }
+     
+        .text-small {
+            font-family: 'Sansita Swashed', cursive;
+            font-size: 18px;
+            text-align: center;
+        }
+     
+        #service {
+            margin: 34px;
+            display: flex;
+        }
+     
+        #service .box {
+     
+            /* This is for the background of the box */
+            /* To make all the boxes seperatable
+            from each other */
+            padding: 45px;
+            margin: 3px 6px;
+     
+            /* To make the box have a better
+            looking than rectangular shape */
+            border-radius: 28px;
+        }
+     
+        /* This is for the image that we have
+        used in the box */
+        #service .box img {
+            margin-top: 20px;
+     
+            /* This is for the height of the image
+            that is required for the page */
+            height: 100px;
+            margin: auto;
+            display: block;
+     
+            /* This is to make the image obtain
+            a circular shape */
+            border-radius: 200px;
+        }
+     
+        #service .box p {
+     
+            /* This is for the text that we have
+            written to define the image that we
+            have used */
+            font-family: sans-serif;
+     
+            /* This is to make the text to be
+            aligned at center */
+            text-align: center;
+        }
+        .service{
+            background-color: white;
+        }
+     
+        .btn {
+            padding: 8px 20px;
+            margin: 7px 0;
+     
+            /* The radius of the border will have
+            a width of 2px and the type of border
+            will be solid. The border will have a
+            border of white depending on what type
+            of image we have used as background */
+            border: 2px solid white;
+     
+            /* Here we have used border-radius to
+            make the search button appear better */
+            border-radius: 8px;
+     
+            /* To make the button have the color
+            of background */
+            background: none;
+     
+            /* To make the text of the button
+            have the color of white */
+            color: white;
+            cursor: pointer;
+        }
+     
+        .btn-sm {
+            padding: 6px 10px;
+            vertical-align: middle;
+        }
+     
+        /* This is used here in case if we want
+        to make the text appear at center */
+     
+        .center {
+            text-align: center;
+        }
+     
+        .text-footer {
+            text-align: center;
+            padding: 30px 0;
+            font-family: 'Ubuntu', sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Zen Antique Soft', serif;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 70px;
+    background: rgb(255, 166, 0);
+    z-index:99;
+}
+nav .menubar{
+    max-width:1250px;
+    height:100%;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:auto;
+    padding:0 50px;
+}
+nav .menubar .navigation{
+    height:100%;
+    line-height:70px;
+}
+nav .menubar .links{
+    display:flex;
+}
+nav .menubar .links li{
+    position: relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    list-style: none;
+    padding:0 14px
+}
+
+nav .menubar .links li a{
+    text-decoration:none;
+    font-size:25px;
+    border:2px solid transparent;
+    color: white;
+}
+
+nav .menubar .links li i{
+    font-size:25px;
+}
+.logo a{
+    text-decoration: none;
+    font-size:30px;
+    font-weight:bold;
+
+}
+.logo i{
+    font-size:30px;
+}
+
+
+.links li .profile-sub-menu{
+    position:absolute;
+    top:70px;
+    left:0;
+    line-height:40px;
+    background-color:rgb(195, 195, 195);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius:0 0 4px 4px;
+    border:3px solid rgb(66, 65, 65);
+    display:none;
+    z-index:100;
+}
+
+nav .navigation .links li:hover .profile-sub-menu{
+    display:inline-block;
+}
+nav .navigation .links li:hover .prof{
+    background-color:rgb(180, 121, 12);
+}
+
+
+.links li .recipe-sub-menu{
+    position:absolute;
+    top:70px;
+    left:0;
+    line-height:40px;
+    background-color:rgb(195, 195, 195);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius:0 0 4px 4px;
+    border:3px solid rgb(66, 65, 65);
+    display:none;
+    z-index:100;
+}
+.recipe-sub-menu{
+    font-style: italic;
+}
+
+.links li:hover .recipe-sub-menu{
+    display:block;
+}
+
+
+.links li:hover{
+    color:#fff;
+    background-color:rgb(180, 121, 12);
+}
+
+#container{
+    display:flex;
+    flex-wrap: wrap;
+    padding:20px;
+}
+
+.panel{
+    background-color:teal;
+    padding:10px;
+    color:#fff;
+    font-size:50px;
+    display:flex;
+    width:100%;
+    height:250px;
+    align-items:center;
+    font-style: italic;
+    border:2px solid grey;
+}
+body{
+    background-image:url("food.jpg");
+    background-color:black;
+}
+
+.Recipe{
+    transition: transform .2s;
+}
+.Recipe:hover{
+    transform: scale(1.01);
+}
+
+.btn{
+    display:flex;
+    text-align:center;
+    width: 90%;
+    border: 1 px solid black;
+    background: transparent;
+    transition: transform .2s;
+    margin-left:15px;
+    padding:1px;
+}
+.btn:hover{
+    background:red;
+    color:white;
+    transform: scale(1.03);
+}
+
+.recipe{
+    background-color: aliceblue;
+}
+    </style>
+</head>
+ 
+<body>
+    <nav>
+        <div class="menubar">
+            <div class="logo">
+                <a href="#">TMSMPG</a>
+                <i class='bx bxs-cake'></i>
+            </div>
+            <div class="navigation">
+               <ul class="links">
+                   <li><div class="home"><a href="/">Home</a>
+                       <i class='bx bxs-home-circle' ></i></div>
+                   </li>
+
+                   <li><div class="rec"><a href="#">Recipes</a>
+                        <i class='bx bxs-food-menu'></i>
+                        <ul class="recipe-sub-menu">
+                            <li><a href="/vegan">Vegan</a></li>
+                            <li><a href="/keto">Keto</a></li>
+                            <li><a href="#">Student Friendly</a></li>
+                        </ul></div>
+                   </li>
+                   <li><div class="contact"><a href="/faq1">Contact Us</a>
+                        <i class='bx bx-envelope'></i></div>
+                   </li>
+                   <li><div class="QA"><a href="/faq">Q/A</a>
+                        <i class='bx bx-question-mark'></i></div>
+                   </li>
+               </ul>
+            </div>
+        </div>
+        </nav>
+        <br>
+        <br>
+    <section class="background firstsection">
+        <div class="box-main">
+            <div class="firstHalf">
+ 
+                <!-- The class text-big is used to make
+                    the text bigger than the text which
+                    will be written after this -->
+                <p class="text-big">Contact Us</p>
+ 
+ 
+ 
+                <!-- The class text-small is used to make
+                    the text smaller and have a distinction
+                    between the text-big -->
+                <p class="text-small">
+                    You can Contact Us if you face any problem
+                </p>
+ 
+ 
+                <!-- To make the text appear little below
+                    the text that has the class of
+                    text-small -->
+                <br>
+                <p class="center" style=
+                    "text-decoration:none;color:white;">
+                    Click on the below options to Contact us
+                </p>
+ 
+ 
+            </div>
+        </div>
+    </section>
+ 
+    <section class="service">
+ 
+        <!-- Heading-->
+        <h1 class="h-primary center"
+            style="margin-top:30px;">
+            Options to Contact
+        </h1>
+ 
+        <div id="service">
+            <div class="box">
+ 
+                <!-- Form -->
+                <a href="_blank.html">
+                <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20201231132740/Capture.PNG"></a>
+                <!-- To make the text of the image be
+                    seprateable we will use br -->
+                <br>
+ 
+                <!-- To make the text to be displayed at
+                    the center of the box, we will use
+                    center class -->
+                <p class="center">
+                    People can fill up the form
+                    and send us the problem
+                </p>
+ 
+ 
+            </div>
+ 
+            <div class="box">
+ 
+                <!-- Email -->
+                <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20201231132740/Capture.PNG">
+                <!-- To make the text of the image be
+                    seperatable we will use br -->
+                <br>
+ 
+                <!-- To make the text to be displayed at
+                    the center of the box, we will use
+                    center class -->
+                <p class="center">
+                    Use this Email to send us
+                    about the problem faced
+                </p>
+                <p class="center">TMSMPG@gmail.com</p>
+ 
+ 
+            </div>
+ 
+            <div class="box">
+ 
+                <!-- Toll Free Number -->
+                <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20201231132740/Capture.PNG">
+                <!-- To make the text of the image
+                    be seperatable we will use br -->
+                <br>
+ 
+                <!-- To make the text to be displayed at
+                    the center of the box, we will use
+                    center class -->
+                <p class="center">
+                    Toll Free Number:+1800 200 300 400
+                </p>
+ 
+ 
+            </div>
+        </div>
+    </section>
+     
+    <footer class="background">
+        <p class="text-footer">
+            Copyright @-All rights are reserved
+        </p>
+ 
+ 
+    </footer>
+</body>
+ 
+</html>

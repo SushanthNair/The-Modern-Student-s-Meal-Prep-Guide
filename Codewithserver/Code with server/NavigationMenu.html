@@ -1,0 +1,293 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <link href='style.css' rel='stylesheet' type='text/css'>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Zen Antique Soft', serif;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 70px;
+    background: rgb(255, 166, 0);
+    z-index:99;
+}
+nav .menubar{
+    max-width:1250px;
+    height:100%;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:auto;
+    padding:0 50px;
+}
+nav .menubar .navigation{
+    height:100%;
+    line-height:70px;
+}
+nav .menubar .links{
+    display:flex;
+}
+nav .menubar .links li{
+    position: relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    list-style: none;
+    padding:0 14px
+}
+
+nav .menubar .links li a{
+    text-decoration:none;
+    font-size:25px;
+    border:2px solid transparent;
+    color: white;
+}
+
+nav .menubar .links li i{
+    font-size:25px;
+}
+.logo a{
+    text-decoration: none;
+    font-size:30px;
+    font-weight:bold;
+
+}
+.logo i{
+    font-size:30px;
+}
+
+
+.links li .profile-sub-menu{
+    position:absolute;
+    top:70px;
+    left:0;
+    line-height:40px;
+    background-color:rgb(195, 195, 195);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius:0 0 4px 4px;
+    border:3px solid rgb(66, 65, 65);
+    display:none;
+    z-index:100;
+}
+
+nav .navigation .links li:hover .profile-sub-menu{
+    display:inline-block;
+}
+nav .navigation .links li:hover .prof{
+    background-color:rgb(180, 121, 12);
+}
+
+
+.links li .recipe-sub-menu{
+    position:absolute;
+    top:70px;
+    left:0;
+    line-height:40px;
+    background-color:rgb(195, 195, 195);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius:0 0 4px 4px;
+    border:3px solid rgb(66, 65, 65);
+    display:none;
+    z-index:100;
+}
+.recipe-sub-menu{
+    font-style: italic;
+}
+
+.links li:hover .recipe-sub-menu{
+    display:block;
+}
+
+
+.links li:hover{
+    color:#fff;
+    background-color:rgb(180, 121, 12);
+}
+
+#container{
+    display:flex;
+    flex-wrap: wrap;
+    padding:20px;
+}
+
+.panel{
+    background-color:teal;
+    padding:10px;
+    color:#fff;
+    font-size:50px;
+    display:flex;
+    width:100%;
+    height:250px;
+    align-items:center;
+    font-style: italic;
+    border:2px solid grey;
+}
+body{
+    background-image:url("food.jpg");
+    background-color:black;
+}
+
+.Recipe{
+    transition: transform .2s;
+}
+.Recipe:hover{
+    transform: scale(1.01);
+}
+
+.btn{
+    display:flex;
+    text-align:center;
+    width: 90%;
+    border: 1 px solid black;
+    background: transparent;
+    transition: transform .2s;
+    margin-left:15px;
+    padding:1px;
+}
+.btn:hover{
+    background:red;
+    color:white;
+    transform: scale(1.03);
+}
+
+.recipe{
+    background-color: aliceblue;
+}
+        </style>
+        <title>TMSMPG</title>
+    </head>
+    <body>
+        <nav>
+        <div class="menubar">
+            <div class="logo">
+                <a href="#">TMSMPG</a>
+                <i class='bx bxs-cake'></i>
+            </div>
+            <div class="navigation">
+               <ul class="links">
+                   <li><div class="home"><a href="/">Home</a>
+                       <i class='bx bxs-home-circle' ></i></div>
+                   </li>
+
+                   <li><div class="rec"><a href="#">Recipes</a>
+                        <i class='bx bxs-food-menu'></i>
+                        <ul class="recipe-sub-menu">
+                            <li><a href="/vegan">Vegan</a></li>
+                            <li><a href="/keto">Keto</a></li>
+                            <li><a href="#">Student Friendly</a></li>
+                        </ul></div>
+                   </li>
+                   <li><div class="contact"><a href="/faq1">Contact Us</a>
+                        <i class='bx bx-envelope'></i></div>
+                   </li>
+                   <li><div class="QA"><a href="/faq">Q/A</a>
+                        <i class='bx bx-question-mark'></i></div>
+                   </li>
+                   <li><div class="QA"><a href="/reviews">Reviews</a></div>
+               </ul>
+            </div>
+        </div>
+        </nav>
+        <br>
+        <br>
+        <div class="panel">
+            <p style="text-align: center">"To eat is a necessity,but to eat intelligently is an art"</p>
+        </div>
+        <script type="text/babel">
+            class Picture extends React.Component {
+                render() {
+                    var pictureStyle={
+                        width:"100%",
+                        height:"60%",
+                        backgroundColor:"pink",
+                        align: "center"
+                    };
+                    var imageStyle={
+                        width:"100%",
+                        height:"100%",
+                        align: "center"
+                    };
+                    return (<div style={pictureStyle}><img src={this.props.I} style={imageStyle}/></div>);
+                }
+            }
+            class Label extends React.Component {
+                render(){
+                    var labelStyle={
+                        fontFamily:"sans-serif",
+                        fontSize:20,
+                        padding: 15,
+                        fontWeight:"bold",
+                        fontStyle:"italic",
+                        margin:0,
+                        textAlign:"center"
+                    }
+                    var descriptionStyle={
+                        fontFamily:"sans-serif",
+                        fontSize:15,
+                        padding: 15,
+                        margin:0,
+                        textAlign:"center",
+                        fontStyle:"italic",
+                    }/*
+                    var buttonStyle={
+                        textAlign:"center",
+                        backgroundColor:"transparent",
+                        margin:0,
+                        border:0
+                    }*/
+                    return(<div className="label">
+                        <p style={labelStyle}>{this.props.det}</p>
+                        <p style={descriptionStyle}>{this.props.children}</p>
+                        <p style={descriptionStyle}>Rated:{this.props.r}</p>
+                        <button type="button" className="btn" onClick={this.fun1} >View</button>
+                        </div>);
+                }
+                fun1=()=>{
+                    location.href=this.props.l;
+                }
+            }
+            class Recipe extends React.Component {
+                render(){
+                    var recipeStyle={
+                        height:"25em",
+                        width: "20em",
+                        padding: 10,
+                        margin: 30,
+                        filter:"drop-shadow(0px 0px 5px #666)",
+                        backgroundColor: "white",
+                        display:"inline-block"
+                    }
+                    return(<div style={recipeStyle} className="Recipe">
+                            <Picture I={this.props.Img}/>
+                            <Label det={this.props.Name} l={this.props.Link} r={this.props.rating}>{this.props.children}</Label>
+                        </div>);
+                }
+            }
+            ReactDOM.render(
+                <div>
+                    <Recipe Name="Vegan Coconut Dal" Link="1.html" rating="4/5" Img="dal.jpg">Look no further for a creamy and ultra smooth Vegan Coconut Dal recipe!</Recipe>
+                    <Recipe Name="Vegan chickpea Curry" Link="2.html" rating="3/5" Img="chickpea.png">South Indian Chickpea Curry with coconut milk and spices like fennel and cardamom</Recipe>
+                    <Recipe Name="Low Carb Keto Chilli" rating="4/5" Link="3.html" Img="chilly.jpg">Low Carb Keto Chili with plant-based meat hits the spot perfectly on a cold winter's day</Recipe>
+                    <Recipe Name="Keto Methi Malai Paneer Tofu" rating="4/5" Link="4.html" Img="methi.jpeg">A fast and fabulously flavorful recipe for Instant Keto Methi Malai Paneer Tofu</Recipe>
+
+                    <Recipe Name="Bean Walnut 'Shroom Burgers" Link="5.html" rating="4/5" Img="burg.jpg">A healthy vegan option for burgers</Recipe>
+                    <Recipe Name="Falafel Burgers" Link="6.html" rating="3/5" Img="fal.jpeg">recipe details like this</Recipe>
+                </div>,document.querySelector("#container")
+            );
+        </script>
+        <br>
+        <div id="container"></div>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<head>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<div id="container">
+  
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap');
+
+body{
+  background: rgb(34,193,195);
+  background: linear-gradient(135deg, pink 0%, white 100%);
+  font-family: "work sans";
+}
+
+html{
+  font-size: 100%;
+}
+
+#loginform{
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 700px;
+  width: 30%;
+  height: 60%;
+  margin: 100px auto;
+  background-color: #FFFFFF;
+  border-radius: 25px;
+}
+
+#headerTitle{
+  text-align: center;
+  font-family: 'open sans', sans-serif;
+  padding: 2rem 0;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  max-width: 100%;
+  
+}
+
+.row input{
+  width: 80%;
+  box-sizing: border-box;
+  border: none;
+  font-size: 1.3rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+  box-shadow: inset 0px -3px 0px 0px lightblue;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.row input:focus{
+   box-shadow: inset 0px -3px 0px 0px rgba(34,193,195,0.7);
+   outline: none;
+}
+
+.row input::-webkit-input-placeholder{
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+}
+
+.row input:hover::-webkit-input-placeholder,
+.row input:focus::-webkit-input-placeholder{
+  opacity: 0;
+}
+
+.row label{
+  align-self: start;
+  padding-left: 4.5rem;
+  padding-bottom: 0.5rem;
+  color: rgba(187,187,187,0.9);
+}
+
+.row button{
+  border-radius: 25px;
+  width: 80%;
+  height: 40px;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 700;
+  background: rgb(34,193,195);
+  background: linear-gradient(90deg, pink 0%,  lightblue 100%);
+  border: 0px;
+  cursor: pointer;
+  transition: opacity 0.25s ease-out;
+}
+
+.row button:hover{
+  opacity: 0.8;
+}
+
+#button{
+  padding-bottom: 1.5rem;
+}
+</style>
+<body>
+<script type="text/babel">
+const App = props => (
+    <SignIn />
+);
+  
+
+class SignIn extends React.Component{
+  render(){
+    return(
+      <div id="signin">
+        <FormHeader title="Sign In" />
+        <Form />
+        
+      </div>
+    )
+  }
+}
+
+const FormHeader = props => (
+    <h2 id="headerTitle">{props.title}</h2>
+);
+
+
+const Form = props => (
+   <div>
+    <FormInput placeholder="Enter your first name" type="text" />
+    <FormInput placeholder="Enter email" type="email" />
+    <FormInput placeholder="Enter phone number" type="text" />
+    <FormInput placeholder="Enter your password" type="password"/>
+    <FormButton title="Sign in"/>
+   </div>
+);
+
+const FormButton = props => (
+  <div id="button" class="row">
+    <button>{props.title}</button>
+  </div>
+);
+
+const FormInput = props => (
+  <div class="row">
+    <label>{props.description}</label>
+    <input type={props.type} placeholder={props.placeholder}/>
+  </div>  
+);
+ReactDOM.render(<App />, document.getElementById('container'));
+
+</script>
+</body>
